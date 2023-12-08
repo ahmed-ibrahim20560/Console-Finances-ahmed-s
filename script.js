@@ -129,3 +129,20 @@ var finances = [
 // previous data point 
 
 
+var months = finances.length 
+
+let amount = 0
+let total = 0
+
+for (let i = 0; i < finances.length; i++) {
+  const position = finances[i];
+  const second = position[1]
+  total += second
+}
+
+
+
+console.log(`Financial Analysis
+-----------------------------
+Total number of months = ${months}
+Total amount of profit = ${total}`)
