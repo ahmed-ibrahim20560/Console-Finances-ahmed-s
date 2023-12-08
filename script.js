@@ -118,8 +118,8 @@ var finances = [
   // If the loss is greater, replace what's currently stored in the variable
 
 // variables:
-// total number of months
-// rolling total of profits
+// !total number of months
+// !rolling total of profits
 // greatest increase (month & amt)
 // greatest loss (month & amt)
 // average of the changes
@@ -140,9 +140,15 @@ for (let i = 0; i < finances.length; i++) {
   total += second
 }
 
+let average = total / (finances.length - 1)
+
 
 
 console.log(`Financial Analysis
 -----------------------------
 Total number of months = ${months}
-Total amount of profit = ${total}`)
+Total amount of profit = ${total}
+Greatest increase (Month , Amount) = 
+Greatest loss (Month , Amount) = 
+Average of the changes = ${average}
+`)
