@@ -93,52 +93,94 @@ var finances = [
 // Your task is to write JavaScript code that analyzes the records to calculate each of the following:
 
 // The total number of months included in the dataset.
-  // finances.length
+// finances.length
 
 // The net total amount of Profit / Losses over the entire period.
-  // Need a variable for Profits/Losses
-  // Need to be able to compare the data for the loop that we're on to the data from the previous loop
-    // Need variables for current & previous once we start the loop
-    // Need an if statement to make sure we're on at least month 2 (array index 1) before starting to figure profits & losses
+// Need a variable for Profits/Losses
+// Need to be able to compare the data for the loop that we're on to the data from the previous loop
+// Need variables for current & previous once we start the loop
+// Need an if statement to make sure we're on at least month 2 (array index 1) before starting to figure profits & losses
 
 // The average of the changes in Profit / Losses over the entire period.
-  // Need a variable to track the average change
-  // That will make use of the current & previous variables we set up before
+// Need a variable to track the average change
+// That will make use of the current & previous variables we set up before
 // You will need to track what the total change in Profit / Losses are from month to month and then find the average.
 // (Total / (Number of months - 1))
 
 // The greatest increase in Profit / Losses(date and amount) over the entire period.
-  // Need a variable for the greatest increase
-  // On each iteration, compare the current change in profits/losses to what's currently stored
-  // If the change is more, replace what's currently stored in the variable
+// Need a variable for the greatest increase
+// On each iteration, compare the current change in profits/losses to what's currently stored
+// If the change is more, replace what's currently stored in the variable
 
 // The greatest decrease in Profit / Losses(date and amount) over the entire period.
-  // Need a variable for the greatest decrease
-  // On each iteration, compare the current change in profits/losses to what's currently stored
-  // If the loss is greater, replace what's currently stored in the variable
+// Need a variable for the greatest decrease
+// On each iteration, compare the current change in profits/losses to what's currently stored
+// If the loss is greater, replace what's currently stored in the variable
 
 // variables:
 // !total number of months
 // !rolling total of profits
 // greatest increase (month & amt)
 // greatest loss (month & amt)
-// average of the changes
+// !average of the changes
 
 // variables declared inside the loop:
 // current data point
 // previous data point 
 
 
-var months = finances.length 
+var months = finances.length
 
 let amount = 0
 let total = 0
+let prevmonth;
+let greatestloss = 0
+let greatestgain = 0
+let greatestlossdate;
+let greatestgaindate;
 
 for (let i = 0; i < finances.length; i++) {
   const position = finances[i];
   const second = position[1]
   total += second
 }
+
+
+
+for (let i = 0; i < finances.length; i++) {
+  const position = finances[i];
+  const second = position[1]
+
+  if (i > 0) {
+    prevmonth = finances[i - 1]
+    let difference = second - prevmonth[1]
+    if (difference > greatestgain) {
+      greatestgain = difference
+      greatestgaindate = position[0]
+    }
+    if (difference < greatestloss) {
+      greatestloss = difference
+      greatestlossdate = position[0]
+    }
+
+  }
+
+  // function Sorting(a, b) {
+  //   if (a > b) {
+  //     return 1;
+  //   } else if (b > a) {
+  //     return -1;
+  //   } else {
+  //     return 0;
+  //   }
+  // }
+  // let Sorted = second.sort(Sorting)
+  // let Greatest = Sorted[-1]
+}
+// console.log(greatestgaindate , greatestgain)
+// console.log(greatestlossdate , greatestloss)
+// let Sorted = finances.sort((a, b) => b[1] - a[1])
+// console.log(Sorted)
 
 let average = total / (finances.length - 1)
 
@@ -148,7 +190,7 @@ console.log(`Financial Analysis
 -----------------------------
 Total number of months = ${months}
 Total amount of profit = ${total}
-Greatest increase (Month , Amount) = 
-Greatest loss (Month , Amount) = 
+Greatest increase (Month , Amount) = (${greatestgaindate} , ${greatestgain})
+Greatest loss (Month , Amount) = (${greatestlossdate} , ${greatestloss})
 Average of the changes = ${average}
 `)
