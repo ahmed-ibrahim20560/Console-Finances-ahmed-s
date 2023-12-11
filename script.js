@@ -120,8 +120,8 @@ var finances = [
 // variables:
 // !total number of months
 // !rolling total of profits
-// greatest increase (month & amt)
-// greatest loss (month & amt)
+// !greatest increase (month & amt)
+// !greatest loss (month & amt)
 // !average of the changes
 
 // variables declared inside the loop:
@@ -130,8 +130,8 @@ var finances = [
 
 
 var months = finances.length
-
-let amount = 0
+let totalchange = 0
+let average = 0
 let total = 0
 let prevmonth;
 let greatestloss = 0
@@ -181,8 +181,18 @@ for (let i = 0; i < finances.length; i++) {
 // console.log(greatestlossdate , greatestloss)
 // let Sorted = finances.sort((a, b) => b[1] - a[1])
 // console.log(Sorted)
+for (let i = 0; i < finances.length; i++) {
+  const position = finances[i];
+  const second = position[1]
 
-let average = total / (finances.length - 1)
+  if (i > 0) {
+    prevmonth = finances[i - 1]
+    let difference = second - prevmonth[1]
+    totalchange += difference
+    average = totalchange / (finances.length - 1)
+
+  }
+ }
 
 
 
@@ -193,4 +203,4 @@ Total amount of profit = ${total}
 Greatest increase (Month , Amount) = (${greatestgaindate} , ${greatestgain})
 Greatest loss (Month , Amount) = (${greatestlossdate} , ${greatestloss})
 Average of the changes = ${average}
-`)
+`) 
