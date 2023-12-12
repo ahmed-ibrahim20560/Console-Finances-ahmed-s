@@ -190,7 +190,7 @@ for (let i = 0; i < finances.length; i++) {
     let difference = second - prevmonth[1]
     totalchange += difference
     average = totalchange / (finances.length - 1)
-
+    roundedaverage = (Math.round(average * 100)/100)
   }
  }
 
@@ -202,5 +202,5 @@ Total number of months = ${months}
 Total amount of profit = ${total}
 Greatest increase (Month , Amount) = (${greatestgaindate} , ${greatestgain})
 Greatest loss (Month , Amount) = (${greatestlossdate} , ${greatestloss})
-Average of the changes = ${average}
+Average of the changes = ${roundedaverage}
 `) 
