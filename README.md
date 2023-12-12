@@ -7,5 +7,9 @@ I set multiple different for loops in order to find the average change as well a
 
 ![Image of the console showing the financial analysis](<Images/Screenshot 2023-12-12 at 21.51.08.png>)
 
+https://ahmed-ibrahim20560.github.io/Console-Finances-ahmed-s/
+
+https://github.com/ahmed-ibrahim20560/Console-Finances-ahmed-s
+
 
 
