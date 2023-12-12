@@ -163,24 +163,9 @@ for (let i = 0; i < finances.length; i++) {
       greatestlossdate = position[0]
     }
 
-  }
-
-  // function Sorting(a, b) {
-  //   if (a > b) {
-  //     return 1;
-  //   } else if (b > a) {
-  //     return -1;
-  //   } else {
-  //     return 0;
-  //   }
-  // }
-  // let Sorted = second.sort(Sorting)
-  // let Greatest = Sorted[-1]
 }
-// console.log(greatestgaindate , greatestgain)
-// console.log(greatestlossdate , greatestloss)
-// let Sorted = finances.sort((a, b) => b[1] - a[1])
-// console.log(Sorted)
+}
+
 for (let i = 0; i < finances.length; i++) {
   const position = finances[i];
   const second = position[1]
@@ -203,4 +188,5 @@ Total amount of profit = ${total}
 Greatest increase (Month , Amount) = (${greatestgaindate} , ${greatestgain})
 Greatest loss (Month , Amount) = (${greatestlossdate} , ${greatestloss})
 Average of the changes = ${roundedaverage}
-`) 
+`)
+
