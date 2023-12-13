@@ -184,9 +184,9 @@ for (let i = 0; i < finances.length; i++) {
 console.log(`Financial Analysis
 -----------------------------
 Total number of months = ${months}
-Total amount of profit = ${total}
-Greatest increase (Month , Amount) = (${greatestgaindate} , ${greatestgain})
-Greatest loss (Month , Amount) = (${greatestlossdate} , ${greatestloss})
+Total amount of profit = $${total}
+Greatest increase (Month , Amount) = (${greatestgaindate} , $${greatestgain})
+Greatest loss (Month , Amount) = (${greatestlossdate} , $${greatestloss})
 Average of the changes = ${roundedaverage}
 `)
 
